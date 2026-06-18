@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>{{ tank.name }}</h2>
+<div class="card mb-4">
+    <div class="card-body">
+        <h3>Compatibility Score:
+        {{ score }}%
+        </h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5>Temperature</h5>
+                {% if temperature.compatible %}
+                {{ temperature.min }}
+                –
+                {{ temperature.max }} °C
+                {% else %}
+                Not Compatible
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5>pH</h5>
+                {% if ph.compatible %}
+                {{ ph.min }}
+                –
+                {{ ph.max }} °C
+                {% else %}
+                Not Compatible
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5>GH</h5>
+                {% if gh.compatible %}
+                {{ gh.min }}
+                –
+                {{ gh.max }} °C
+                {% else %}
+                Not Compatible
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="card">
+    <div class="card-body">
+        <h4>Water Quality Limits</h4>
+        <p>Nitrate: < {{ water_quality.nitrate_max }}ppm</p>
+    </div>
+</div>
+<hr>
+<h3>Temperature Compatibility</h3>
+{{ charts.temperature|safe }}
+<hr>
+<h3>pH Compatibility</h3>
+{{ charts.ph|safe }}
+<hr>
+<h3>GH Compatibility</h3>
+{{ charts.gh|safe }}
+
+
+
+{% endblock %}

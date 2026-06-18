@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Aquariums</h2>
+
+<a href="{{ url_for('add_tank') }}" class="btn btn-primary mb-3">
+   Add Aquarium
+</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Species Count
+            </th>
+            <th>
+                Detail
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for tank in tanks %}
+    <tr>
+        <td>
+            {{ tank.name }}
+        </td>
+        <td>
+            {{ tank.description }}
+        </td>
+        <td>
+            {{ tank.species|length }}
+        </td>
+        <td>
+            <a href="{{ url_for('tank_detail', id=tank.id) }}"
+               class="btn btn-success">
+                View Tank
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}

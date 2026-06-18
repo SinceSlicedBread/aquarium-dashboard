@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>{{ tank.name }}</h2>
+
+<p> {{ tank.description }}</p>
+
+<a href="{{ url_for('delete_tank', id=tank.id) }}"
+   class="btn btn-warning">
+    Delete Tank
+</a>
+<hr>
+<h4>Add Fish</h4>
+
+<form method="POST"
+      action="{{ url_for('add_species_to_tank', tank_id=tank.id) }}">
+
+    <select class="form-select" name="species_id">
+        {% for fish in all_species %}
+            <option value="{{ fish.id }}">
+                    {{ fish.common_name }}
+            </option>
+        {% endfor %}
+    </select>
+    <br>
+    <button class="btn btn-primary">
+        Add Fish
+    </button>
+</form>
+<hr>
+<h4>Current Species</h4>
+<ul>
+    {% for fish in tank.species %}
+    <li>
+        {{ fish.common_name }}
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{{ url_for('tank_dashboard',id=tank.id) }}"
+   class="btn btn-success">
+    Analyse Compatibility
+</a>
+{% endblock %}

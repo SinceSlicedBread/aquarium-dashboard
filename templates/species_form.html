@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>
+    {% if fish %}
+    Edit Species
+    {% else %}
+    Add Species
+    {% endif %}
+</h2>
+<form method="POST">
+    <div class="row">
+        <div class="col-md-7">
+            <label>Common Name</label>
+            <input class="form-control"
+                   name="common_name"
+                   value="{{ fish.common_name if fish else '' }}"
+                   required>
+        </div>
+        <div class="col-md-7">
+            <label>Scientific Name</label>
+            <input class="form-control"
+                   name="scientific_name"
+                   value="{{ fish.scientific_name if fish else '' }}">
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col">
+            <label>Temp Min</label>
+            <input class="form-control"
+                   type="number"
+                   step="0.1"
+                   name="temp_min"
+                   value="{{ fish.temp_min if fish else '' }}"
+                   required>
+        </div>
+        <div class="col">
+            <label>Temp Max</label>
+            <input class="form-control"
+                   type="number"
+                   step="0.1"
+                   name="temp_max"
+                   value="{{ fish.temp_max if fish else '' }}"
+                   required>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <label>pH Min</label>
+            <input class="form-control"
+                   type="number"
+                   step="0.1"
+                   name="ph_min"
+                   value="{{ fish.ph_min if fish else '' }}"
+                   required>
+        </div>
+        <div class="col">
+            <label>pH Max</label>
+            <input class="form-control"
+                   type="number"
+                   step="0.1"
+                   name="ph_max"
+                   value="{{ fish.ph_max if fish else '' }}"
+                   required>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <label>GH Min</label>
+            <input class="form-control"
+                   type="number"
+                   step="0.1"
+                   name="gh_min"
+                   value="{{ fish.gh_min if fish else '' }}"
+                   required>
+        </div>
+        <div class="col">
+            <label>GH Max</label>
+            <input class="form-control"
+                   type="number"
+                   step="0.1"
+                   name="gh_max"
+                   value="{{ fish.gh_max if fish else '' }}"
+                   required>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <label>Nitrate Min</label>
+            <input class="form-control"
+                   type="number"
+                   step="0.1"
+                   name="nitrate_min"
+                   value="{{ fish.nitrate_min if fish else '' }}"
+                   required>
+        </div>
+        <div class="col">
+            <label>Nitrate Max</label>
+            <input class="form-control"
+                   type="number"
+                   step="0.1"
+                   name="nitrate_max"
+                   value="{{ fish.nitrate_max if fish else '' }}"
+                   required>
+        </div>
+    </div>
+    <br>
+    <label>Source</label>
+    <input class="form-control"
+           name="source"
+           value="{{ fish.source if fish else '' }}">
+    <br>
+    <button type="submit" class="btn btn-success">Save Species</button>
+</form>
+
+{% endblock %}

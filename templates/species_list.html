@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Species Library</h2>
+<a href="{{ url_for('add_species') }}" class="btn btn-primary mb-3">
+    Add Species
+</a>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Scientific</th>
+        <th>Temperature</th>
+        <th>pH</th>
+        <th>GH</th>
+        <th>Nitrates</th>
+        <th></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for fish in species %}
+    <tr>
+        <td>{{ fish.common_name }}</td>
+        <td>{{ fish.scientific_name }}</td>
+        <td>{{ fish.temp_min }} – {{ fish.temp_max }}</td>
+        <td>{{ fish.ph_min }} – {{ fish.ph_max }} </td>
+        <td>{{ fish.gh_min }} – {{ fish.gh_max }} </td>
+        <td>{{ fish.nitrate_min }} – {{ fish.nitrate_max }} </td>
+
+        <td>
+            <a href="{{ url_for('edit_species', id=fish.id) }}" class="btn btn-success btn-sm mb-1">
+                Edit
+            </a>
+            <a href="{{ url_for('delete_species', id=fish.id) }}" class="btn btn-warning btn-sm mb-1">
+                Delete
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

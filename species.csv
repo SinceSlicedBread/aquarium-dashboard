@@ -1,0 +1,16 @@
+id,common_name,scientific_name,temp_min,temp_max,ph_min,ph_max,gh_min,gh_max,nitrate_min,nitrate_max,source
+1,Guppy,Poecilia reticulata,22.0,26.0,6.8,7.8,8.0,12.0,0.0,40.0,PetMD
+2,Molly,Poecilia sphenops,24.0,28.0,7.5,8.5,10.0,25.0,0.0,40.0,Google Ai
+3,Hydra Molly,Poecilia sphenops,24.0,28.0,7.5,8.5,12.0,25.0,0.0,40.0,Google Ai
+4,Neon Tetra,Paracheirodon innesi,22.0,26.0,6.0,7.0,1.0,10.0,0.0,20.0,Google Ai
+5,GloTetra (Black skirt var),Gymnocorymbus ternetzi,22.0,26.0,6.0,7.5,5.0,20.0,0.0,40.0,Google Ai
+6,GloTetra (X-ray var),Pristella maxillaris,24.0,28.0,6.0,7.5,2.0,15.0,0.0,50.0,Google Ai
+7,Suckermouth Catfish,Hypostomus plecostomus,22.0,27.0,6.5,7.5,5.0,19.0,0.0,50.0,Google Ai
+8,Siamese Fighting Fish,Betta splendens,27.0,28.0,6.5,7.5,5.0,15.0,0.0,40.0,Google Ai
+9,Platy,Xiphophorus maculatus,24.0,26.0,7.0,8.2,10.0,18.0,0.0,40.0,Google Ai
+10,Angelfish,Pterophyllum scalare,24.0,29.0,6.0,7.5,3.0,8.0,0.0,40.0,Google Ai
+11,Cory Catfish,Corydorus,22.0,26.0,6.5,7.8,2.0,12.0,0.0,40.0,Google Ai
+12,Cherry Barb,Puntius titteya,22.0,26.0,6.0,7.5,4.0,15.0,0.0,40.0,Google Ai
+13,Harlequin Rasbora,Trigonostigma heteromorpha,22.0,26.0,6.0,7.5,2.0,12.0,0.0,40.0,Google Ai
+14,Dwarf Gourami,Trichogaster lalius,24.0,28.0,6.0,7.5,4.0,10.0,0.0,40.0,Google Ai
+15,Zebra Danio,Danio rerio,18.0,24.0,6.5,7.5,5.0,19.0,0.0,40.0,Google Ai
