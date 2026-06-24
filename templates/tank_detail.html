@@ -30,13 +30,48 @@
 </form>
 <hr>
 <h4>Current Species</h4>
-<ul>
-    {% for fish in tank.species %}
-    <li>
-        {{ fish.common_name }}
-    </li>
-    {% endfor %}
-</ul>
+<table class="table">
+
+
+
+<tbody>
+
+{% for fish in tank.species %}
+
+<tr>
+
+    <td>{{ fish.common_name }}</td>
+
+    <td>
+
+        <form
+            method="POST"
+            action="{{ url_for(
+                'remove_species_from_tank',
+                tank_id=tank.id,
+                species_id=fish.id
+            ) }}"
+            style="display:inline;">
+
+            <button
+                type="submit"
+                class="btn btn-danger btn-sm">
+
+                Remove
+
+            </button>
+
+        </form>
+
+    </td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
 
 <a href="{{ url_for('tank_dashboard',id=tank.id) }}"
    class="btn btn-success">

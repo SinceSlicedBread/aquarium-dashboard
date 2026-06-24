@@ -128,6 +128,7 @@ def delete_tank(id):
 
     return redirect(url_for('tank_list'))
 
+
 @app.route('/tanks/<int:id>')
 def tank_detail(id):
     tank = Tank.query.get_or_404(id)
@@ -150,6 +151,17 @@ def add_species_to_tank(tank_id):
 
     return redirect(url_for("tank_detail", id=tank.id))
 
+## add route to remove species from tank
+@app.route('/tanks/<int:tank_id>/remove_species/<int:species_id>', methods=["POST"])
+def remove_species_from_tank(tank_id, species_id):
+    tank = Tank.query.get_or_404(tank_id)
+    fish = Species.query.get_or_404(species_id)
+
+    if fish in tank.species:
+        tank.species.remove(fish)
+        db.session.commit()
+
+    return redirect(url_for("tank_detail", id=tank.id))
 
 @app.route('/tanks/<int:id>/dashboard')
 def tank_dashboard(id):
