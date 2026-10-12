@@ -151,7 +151,7 @@ def add_species_to_tank(tank_id):
 
     return redirect(url_for("tank_detail", id=tank.id))
 
-## add route to remove species from tank
+
 @app.route('/tanks/<int:tank_id>/remove_species/<int:species_id>', methods=["POST"])
 def remove_species_from_tank(tank_id, species_id):
     tank = Tank.query.get_or_404(tank_id)
